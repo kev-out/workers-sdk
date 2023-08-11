@@ -521,7 +521,7 @@ export const kvBulk = (kvYargs: CommonYargsArgv) => {
 	return kvYargs
 		.command(
 			"put <filename>",
-			"Upload multiple key-value pairs to a namespace",
+			"🔹Upload multiple key-value pairs to a namespace",
 			(yargs) => {
 				return yargs
 					.positional("filename", {
@@ -644,7 +644,7 @@ export const kvBulk = (kvYargs: CommonYargsArgv) => {
 		)
 		.command(
 			"delete <filename>",
-			"Delete multiple key-value pairs from a namespace",
+			"🔹Delete multiple key-value pairs from a namespace",
 			(yargs) => {
 				return yargs
 					.positional("filename", {

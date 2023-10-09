@@ -3,7 +3,7 @@ import { compatDateFlag } from "helpers/files";
 import { inputPrompt } from "helpers/interactive";
 import { detectPackageManager } from "helpers/packages";
 import { getFrameworkCli } from "../index";
-import type { PagesGeneratorContext, FrameworkConfig } from "types";
+import type { FrameworkConfig, PagesGeneratorContext } from "types";
 
 const { npm, dlx } = detectPackageManager();
 

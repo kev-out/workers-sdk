@@ -1,7 +1,7 @@
 import { exit } from "process";
 import Haikunator from "haikunator";
 import open from "open";
-import { brandColor, dim, gray, white, red, hidden, bgRed } from "./colors";
+import { bgRed, brandColor, dim, gray, hidden, red, white } from "./colors";
 
 export const shapes = {
 	diamond: "◇",

@@ -35,8 +35,8 @@ import {
 	createFetchResult,
 	msw,
 	mswSuccessDeployments,
-	mswSuccessDeploymentScriptMetadata,
 	mswSuccessDeploymentScriptAPI,
+	mswSuccessDeploymentScriptMetadata,
 	mswSuccessOauthHandlers,
 	mswSuccessUserHandlers,
 } from "./helpers/msw";
@@ -45,7 +45,6 @@ import { runInTempDir } from "./helpers/run-in-tmp";
 import { runWrangler } from "./helpers/run-wrangler";
 import { writeWorkerSource } from "./helpers/write-worker-source";
 import writeWranglerToml from "./helpers/write-wrangler-toml";
-
 import type { Config } from "../config";
 import type { CustomDomain, CustomDomainChangeset } from "../deploy/deploy";
 import type { WorkerMetadata } from "../deployment-bundle/create-worker-upload-form";

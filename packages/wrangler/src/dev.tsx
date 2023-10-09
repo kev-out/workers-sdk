@@ -9,7 +9,6 @@ import { getEntry } from "./deployment-bundle/entry";
 import Dev from "./dev/dev";
 import { getVarsForDev } from "./dev/dev-vars";
 import { getLocalPersistencePath } from "./dev/get-local-persistence-path";
-
 import { startDevServer } from "./dev/start-server";
 import { logger } from "./logger";
 import * as metrics from "./metrics";
@@ -28,7 +27,7 @@ import {
 } from "./index";
 import type { Config, Environment } from "./config";
 import type { Route, Rule } from "./config/environment";
-import type { CfWorkerInit, CfModule } from "./deployment-bundle/worker";
+import type { CfModule, CfWorkerInit } from "./deployment-bundle/worker";
 import type { LoggerLevel } from "./logger";
 import type { EnablePagesAssetsServiceBindingOptions } from "./miniflare-cli/types";
 import type {

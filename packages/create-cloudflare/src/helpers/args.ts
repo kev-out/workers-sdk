@@ -2,7 +2,7 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { version } from "../../package.json";
 import { templateMap } from "../templateMap";
-import { C3_DEFAULTS, WRANGLER_DEFAULTS, logRaw } from "./cli";
+import { C3_DEFAULTS, logRaw, WRANGLER_DEFAULTS } from "./cli";
 import { getRenderers, inputPrompt } from "./interactive";
 import type { PromptConfig } from "./interactive";
 import type { C3Args } from "types";

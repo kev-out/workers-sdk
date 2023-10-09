@@ -1,10 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { worker as workerPath } from "./paths.mjs";
-import * as esbuild from "esbuild";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
+import * as esbuild from "esbuild";
 import fg from "fast-glob";
+import { worker as workerPath } from "./paths.mjs";
 
 // Process each of the JS files in the `_worker.js` directory
 for (const entry of await fg("**/*.js", { cwd: workerPath, onlyFiles: true })) {

@@ -1,21 +1,21 @@
 import {
-	readFile,
-	writeFile,
-	mkdtemp,
 	cp,
-	rm,
+	mkdtemp,
 	readdir,
+	readFile,
 	rename,
+	rm,
+	writeFile,
 } from "fs/promises";
 import { tmpdir } from "os";
-import { resolve, join } from "path";
+import { join, resolve } from "path";
 import { chdir } from "process";
 import { processArgument } from "helpers/args";
 import {
-	endSection,
-	updateStatus,
-	startSection,
 	C3_DEFAULTS,
+	endSection,
+	startSection,
+	updateStatus,
 } from "helpers/cli";
 import { brandColor, dim } from "helpers/colors";
 import {

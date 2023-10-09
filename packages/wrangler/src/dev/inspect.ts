@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 import { createServer } from "node:http";
 import os from "node:os";
 import path from "node:path";
-import { URL, fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL, URL } from "node:url";
 import open from "open";
 import { useEffect, useRef, useState } from "react";
 import WebSocket, { WebSocketServer } from "ws";

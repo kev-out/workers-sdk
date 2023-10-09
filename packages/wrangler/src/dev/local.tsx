@@ -8,7 +8,7 @@ import { logger } from "../logger";
 import useInspector from "./inspect";
 import { MiniflareServer } from "./miniflare";
 import type { Config } from "../config";
-import type { CfWorkerInit, CfScriptFormat } from "../deployment-bundle/worker";
+import type { CfScriptFormat, CfWorkerInit } from "../deployment-bundle/worker";
 import type { WorkerRegistry } from "../dev-registry";
 import type { EnablePagesAssetsServiceBindingOptions } from "../miniflare-cli/types";
 import type { AssetPaths } from "../sites";

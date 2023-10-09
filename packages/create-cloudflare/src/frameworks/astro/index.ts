@@ -4,7 +4,7 @@ import { npmInstall, runCommand, runFrameworkGenerator } from "helpers/command";
 import { compatDateFlag } from "helpers/files";
 import { detectPackageManager } from "helpers/packages";
 import { getFrameworkCli } from "../index";
-import type { PagesGeneratorContext, FrameworkConfig } from "types";
+import type { FrameworkConfig, PagesGeneratorContext } from "types";
 
 const { npx, dlx } = detectPackageManager();
 

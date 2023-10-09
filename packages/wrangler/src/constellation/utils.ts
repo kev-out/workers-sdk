@@ -1,7 +1,7 @@
 import { fetchResult } from "../cfetch";
 import { getEnvironmentVariableFactory } from "../environment-variables/factory";
 import type { Config } from "../config";
-import type { Project, Model, CatalogEntry } from "./types";
+import type { CatalogEntry, Model, Project } from "./types";
 
 export const getConstellationWarningFromEnv = getEnvironmentVariableFactory({
 	variableName: "NO_CONSTELLATION_WARNING",

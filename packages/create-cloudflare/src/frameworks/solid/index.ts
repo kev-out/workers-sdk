@@ -5,7 +5,7 @@ import { compatDateFlag, usesTypescript, writeFile } from "helpers/files";
 import { detectPackageManager } from "helpers/packages";
 import { getFrameworkCli } from "../index";
 import { viteConfig } from "./templates";
-import type { PagesGeneratorContext, FrameworkConfig } from "types";
+import type { FrameworkConfig, PagesGeneratorContext } from "types";
 
 const { npm, dlx } = detectPackageManager();
 

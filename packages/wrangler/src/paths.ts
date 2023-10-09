@@ -1,5 +1,5 @@
 import { assert } from "node:console";
-import { relative, basename, resolve } from "node:path";
+import { basename, relative, resolve } from "node:path";
 
 type DiscriminatedPath<Discriminator extends string> = string & {
 	_discriminator: Discriminator;

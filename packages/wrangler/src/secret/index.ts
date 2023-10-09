@@ -13,7 +13,6 @@ import { logger } from "../logger";
 import * as metrics from "../metrics";
 import { parseJSON, readFileSync } from "../parse";
 import { requireAuth } from "../user";
-
 import type { Config } from "../config";
 import type {
 	CommonYargsArgv,

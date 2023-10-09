@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ssr, worker } from "./paths.mjs";
+
 fs.cpSync(ssr, worker, { recursive: true });
 fs.renameSync(
 	path.resolve(worker, "main.js"),

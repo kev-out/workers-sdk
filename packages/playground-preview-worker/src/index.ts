@@ -3,6 +3,7 @@ import { getCookie, setCookie } from "hono/cookie";
 import { Toucan } from "toucan-js";
 import { ZodIssue } from "zod";
 import { handleException, setupSentry } from "./sentry";
+
 const app = new Hono<{ Bindings: Env; Variables: { sentry: Toucan } }>({
 	// This replaces . with / in url hostnames, which allows for parameter matching in hostnames as well as paths
 	// e.g. https://something.example.com/hello/world -> something/example/com/hello/world

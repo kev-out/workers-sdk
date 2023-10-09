@@ -2,7 +2,7 @@ import { join } from "path";
 import { FrameworkMap } from "frameworks/index";
 import { readJSON } from "helpers/files";
 import { fetch } from "undici";
-import { describe, expect, test, afterEach, beforeEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, test } from "vitest";
 import { version } from "../package.json";
 import { deleteProject } from "../scripts/e2eCleanup";
 import { frameworkCliMap } from "../src/frameworks/package.json";

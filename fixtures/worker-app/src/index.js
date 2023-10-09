@@ -1,5 +1,5 @@
-import { now } from "./dep";
 import { randomBytes } from "isomorphic-random-example";
+import { now } from "./dep";
 
 /** @param {Uint8Array} array */
 function hexEncode(array) {

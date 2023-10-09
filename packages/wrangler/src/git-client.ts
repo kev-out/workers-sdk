@@ -5,6 +5,7 @@ import { execa } from "execa";
 import { findUp } from "find-up";
 import semiver from "semiver";
 import { logger } from "./logger";
+
 /**
  * Check whether the given current working directory is within a git repository
  * by looking for a `.git` directory in this or an ancestor directory.

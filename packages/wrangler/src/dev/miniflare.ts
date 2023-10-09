@@ -4,10 +4,10 @@ import path from "node:path";
 import {
 	Log,
 	LogLevel,
+	Miniflare,
+	Mutex,
 	NoOpLog,
 	TypedEventTarget,
-	Mutex,
-	Miniflare,
 } from "miniflare";
 import { ModuleTypeToRuleType } from "../deployment-bundle/module-collection";
 import { withSourceURLs } from "../deployment-bundle/source-url";
@@ -21,18 +21,18 @@ import type {
 	CfQueue,
 	CfR2Bucket,
 	CfScriptFormat,
+	CfWorkerInit,
 } from "../deployment-bundle/worker";
-import type { CfWorkerInit } from "../deployment-bundle/worker";
 import type { WorkerRegistry } from "../dev-registry";
 import type { LoggerLevel } from "../logger";
 import type { AssetPaths } from "../sites";
 import type { EsbuildBundle } from "./use-esbuild";
 import type {
 	MiniflareOptions,
-	SourceOptions,
-	WorkerOptions,
 	Request,
 	Response,
+	SourceOptions,
+	WorkerOptions,
 } from "miniflare";
 import type { Abortable } from "node:events";
 

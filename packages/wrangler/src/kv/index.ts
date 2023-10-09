@@ -4,9 +4,9 @@ import { StringDecoder } from "node:string_decoder";
 import { readConfig } from "../config";
 import { confirm } from "../dialogs";
 import {
+	CommandLineArgsError,
 	demandOneOfOption,
 	printWranglerBanner,
-	CommandLineArgsError,
 } from "../index";
 import { logger } from "../logger";
 import * as metrics from "../metrics";
@@ -14,15 +14,15 @@ import { parseJSON, readFileSync, readFileSyncToBuffer } from "../parse";
 import { requireAuth } from "../user";
 import {
 	createKVNamespace,
-	deleteKVNamespace,
-	getKVNamespaceId,
-	isValidKVNamespaceBinding,
-	listKVNamespaces,
 	deleteKVBulkKeyValue,
 	deleteKVKeyValue,
+	deleteKVNamespace,
 	getKVKeyValue,
+	getKVNamespaceId,
 	isKVKeyValue,
+	isValidKVNamespaceBinding,
 	listKVNamespaceKeys,
+	listKVNamespaces,
 	putKVBulkKeyValue,
 	putKVKeyValue,
 	unexpectedKVKeyValueProps,

@@ -11,7 +11,7 @@ import { readFile, readJSON, writeFile } from "helpers/files";
 import { spinner } from "helpers/interactive";
 import { detectPackageManager } from "helpers/packages";
 import { getFrameworkCli } from "../index";
-import type { PagesGeneratorContext, FrameworkConfig } from "types";
+import type { FrameworkConfig, PagesGeneratorContext } from "types";
 
 const { dlx, npx, npm } = detectPackageManager();
 

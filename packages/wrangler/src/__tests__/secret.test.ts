@@ -5,7 +5,7 @@ import * as TOML from "@iarna/toml";
 import { rest } from "msw";
 import { mockAccountId, mockApiToken } from "./helpers/mock-account-id";
 import { mockConsoleMethods } from "./helpers/mock-console";
-import { mockConfirm, mockPrompt, clearDialogs } from "./helpers/mock-dialogs";
+import { clearDialogs, mockConfirm, mockPrompt } from "./helpers/mock-dialogs";
 import { useMockIsTTY } from "./helpers/mock-istty";
 import { mockGetMembershipsFail } from "./helpers/mock-oauth-flow";
 import { useMockStdin } from "./helpers/mock-stdin";

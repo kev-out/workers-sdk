@@ -19,7 +19,7 @@ import {
 	apiPagesDirHelloJs,
 	apiPagesDirHelloTs,
 } from "./templates";
-import type { PagesGeneratorContext, FrameworkConfig, C3Args } from "types";
+import type { C3Args, FrameworkConfig, PagesGeneratorContext } from "types";
 
 const { npm, npx, dlx } = detectPackageManager();
 

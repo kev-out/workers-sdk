@@ -1,7 +1,7 @@
-import { existsSync, rmSync, mkdtempSync, realpathSync } from "fs";
+import { existsSync, mkdtempSync, realpathSync, rmSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
-import { beforeEach, afterEach, describe, test, expect } from "vitest";
+import { afterEach, beforeEach, describe, expect, test } from "vitest";
 import { version } from "../package.json";
 import * as shellquote from "../src/helpers/shell-quote";
 import { frameworkToTest } from "./frameworkToTest";

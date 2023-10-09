@@ -1,5 +1,5 @@
 import { join } from "path";
-import { describe, expect, test, afterEach, beforeEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, test } from "vitest";
 import { frameworkToTest } from "./frameworkToTest";
 import { isQuarantineMode, runC3, testProjectDir } from "./helpers";
 

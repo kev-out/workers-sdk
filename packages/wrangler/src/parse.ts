@@ -2,12 +2,10 @@ import * as fs from "node:fs";
 import { resolve } from "node:path";
 import TOML from "@iarna/toml";
 import { formatMessagesSync } from "esbuild";
-import {
-	parse as jsoncParse,
-	printParseErrorCode,
-	type ParseError as JsoncParseError,
-} from "jsonc-parser";
+import { parse as jsoncParse, printParseErrorCode } from "jsonc-parser";
 import { logger } from "./logger";
+import type { ParseError as JsoncParseError } from "jsonc-parser";
+
 export type Message = {
 	text: string;
 	location?: Location;

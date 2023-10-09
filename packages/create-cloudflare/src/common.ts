@@ -15,7 +15,7 @@ import {
 	startSection,
 	updateStatus,
 } from "helpers/cli";
-import { dim, blue, gray, bgGreen, brandColor } from "helpers/colors";
+import { bgGreen, blue, brandColor, dim, gray } from "helpers/colors";
 import {
 	listAccounts,
 	printAsyncStatus,

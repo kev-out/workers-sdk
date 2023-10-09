@@ -5,7 +5,6 @@ import express from "express";
 import { createHttpTerminator } from "http-terminator";
 import { fetch } from "undici";
 import { logger } from "./logger";
-
 import type { Config } from "./config";
 import type { Server } from "http";
 import type { HttpTerminator } from "http-terminator";

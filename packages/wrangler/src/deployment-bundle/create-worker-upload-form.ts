@@ -1,14 +1,14 @@
 import assert from "node:assert";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { FormData, File } from "undici";
+import { File, FormData } from "undici";
 import { handleUnsafeCapnp } from "./capnp";
 import type {
-	CfWorkerInit,
-	CfModuleType,
 	CfDurableObjectMigrations,
+	CfModuleType,
 	CfPlacement,
 	CfTailConsumer,
+	CfWorkerInit,
 } from "./worker.js";
 import type { Json } from "miniflare";
 

@@ -1,8 +1,8 @@
-import { TextPrompt, SelectPrompt, ConfirmPrompt } from "@clack/core";
+import { ConfirmPrompt, SelectPrompt, TextPrompt } from "@clack/core";
 import ansiEscapes from "ansi-escapes";
 import logUpdate from "log-update";
-import { shapes, cancel, space, status, newline } from "./cli";
-import { blue, dim, gray, brandColor, bold } from "./colors";
+import { cancel, newline, shapes, space, status } from "./cli";
+import { blue, bold, brandColor, dim, gray } from "./colors";
 import type { ChalkInstance } from "chalk";
 import type { C3Arg } from "types";
 

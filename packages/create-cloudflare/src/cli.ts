@@ -3,7 +3,7 @@ import { parseArgs, processArgument } from "helpers/args";
 import { C3_DEFAULTS, crash, logRaw, startSection } from "helpers/cli";
 import { blue, dim } from "helpers/colors";
 import { runCommand } from "helpers/command";
-import { isInteractive, spinnerFrames, spinner } from "helpers/interactive";
+import { isInteractive, spinner, spinnerFrames } from "helpers/interactive";
 import { detectPackageManager } from "helpers/packages";
 import semver from "semver";
 import { version } from "../package.json";

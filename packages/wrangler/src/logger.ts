@@ -4,6 +4,7 @@ import CLITable from "cli-table3";
 import { formatMessagesSync } from "esbuild";
 import { getEnvironmentVariableFactory } from "./environment-variables/factory";
 import type { Message } from "esbuild";
+
 export const LOGGER_LEVELS = {
 	none: -1,
 	error: 0,

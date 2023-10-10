@@ -1,3 +1,4 @@
+import { HttpsProxyAgent } from "https-proxy-agent"
 import WebSocket from "ws";
 import { version as packageVersion } from "../../package.json";
 import { fetchResult } from "../cfetch";
@@ -99,12 +100,21 @@ export async function createPagesTail({
 			`/accounts/${accountId}/pages/projects/${projectName}/deployments/${deploymentId}/tails/${tailRecord.id}`,
 			{ method: "DELETE" }
 		);
+	const proxy =
+	process.env.https_proxy ||
+	process.env.HTTPS_PROXY ||
+	process.env.http_proxy ||
+	process.env.HTTP_PROXY ||
+	undefined;
+
+	const p = proxy ? { agent: new HttpsProxyAgent(proxy) } : {};
 
 	const tail = new WebSocket(tailRecord.url, TRACE_VERSION, {
 		headers: {
 			"Sec-WebSocket-Protocol": TRACE_VERSION, // needs to be `trace-v1` to be accepted
 			"User-Agent": `wrangler-js/${packageVersion}`,
 		},
+		...p,
 	});
 
 	// send filters when we open up
@@ -165,12 +175,23 @@ export async function createTail(
 		await fetchResult(deleteUrl, { method: "DELETE" });
 	}
 
+// TODO Should get this from main file
+const proxy =
+	process.env.https_proxy ||
+	process.env.HTTPS_PROXY ||
+	process.env.http_proxy ||
+	process.env.HTTP_PROXY ||
+	undefined;
+
+	const p = proxy ? { agent: new HttpsProxyAgent(proxy) } : {};
+
 	// connect to the tail
 	const tail = new WebSocket(websocketUrl, TRACE_VERSION, {
 		headers: {
 			"Sec-WebSocket-Protocol": TRACE_VERSION, // needs to be `trace-v1` to be accepted
 			"User-Agent": `wrangler-js/${packageVersion}`,
 		},
+		...p,
 	});
 
 	// send filters when we open up

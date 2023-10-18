@@ -38,12 +38,12 @@ describe("r2", () => {
 			  wrangler r2 bucket list           List R2 buckets
 			  wrangler r2 bucket delete <name>  Delete an R2 bucket
 
-			Flags:
-			  -j, --experimental-json-config  Experimental: Support wrangler.json  [boolean]
-			  -c, --config                    Path to .toml configuration file  [string]
-			  -e, --env                       Environment to use for operations and .env files  [string]
-			  -h, --help                      Show help  [boolean]
-			  -v, --version                   Show version number  [boolean]"
+			Global Flags:
+			  -j, --experimental-json-config  ⚑Experimental: support wrangler.json  [boolean]
+			  -c, --config                    ⚑Path to .toml configuration file  [string]
+			  -e, --env                       ⚑Environment to use for operations and .env files  [string]
+			  -h, --help                      ⚑Show help  [boolean]
+			  -v, --version                   ⚑Show version number  [boolean]"
 		`);
 		});
 
@@ -103,12 +103,12 @@ describe("r2", () => {
 			Positionals:
 			  name  The name of the new bucket  [string] [required]
 
-			Flags:
-			  -j, --experimental-json-config  Experimental: Support wrangler.json  [boolean]
-			  -c, --config                    Path to .toml configuration file  [string]
-			  -e, --env                       Environment to use for operations and .env files  [string]
-			  -h, --help                      Show help  [boolean]
-			  -v, --version                   Show version number  [boolean]
+			Global Flags:
+			  -j, --experimental-json-config  ⚑Experimental: support wrangler.json  [boolean]
+			  -c, --config                    ⚑Path to .toml configuration file  [string]
+			  -e, --env                       ⚑Environment to use for operations and .env files  [string]
+			  -h, --help                      ⚑Show help  [boolean]
+			  -v, --version                   ⚑Show version number  [boolean]
 
 			Options:
 			  -J, --jurisdiction  The jurisdiction where the new bucket will be created  [string]"
@@ -135,12 +135,12 @@ describe("r2", () => {
 			Positionals:
 			  name  The name of the new bucket  [string] [required]
 
-			Flags:
-			  -j, --experimental-json-config  Experimental: Support wrangler.json  [boolean]
-			  -c, --config                    Path to .toml configuration file  [string]
-			  -e, --env                       Environment to use for operations and .env files  [string]
-			  -h, --help                      Show help  [boolean]
-			  -v, --version                   Show version number  [boolean]
+			Global Flags:
+			  -j, --experimental-json-config  ⚑Experimental: support wrangler.json  [boolean]
+			  -c, --config                    ⚑Path to .toml configuration file  [string]
+			  -e, --env                       ⚑Environment to use for operations and .env files  [string]
+			  -h, --help                      ⚑Show help  [boolean]
+			  -v, --version                   ⚑Show version number  [boolean]
 
 			Options:
 			  -J, --jurisdiction  The jurisdiction where the new bucket will be created  [string]"
@@ -208,12 +208,12 @@ describe("r2", () => {
 			Positionals:
 			  name  The name of the bucket to delete  [string] [required]
 
-			Flags:
-			  -j, --experimental-json-config  Experimental: Support wrangler.json  [boolean]
-			  -c, --config                    Path to .toml configuration file  [string]
-			  -e, --env                       Environment to use for operations and .env files  [string]
-			  -h, --help                      Show help  [boolean]
-			  -v, --version                   Show version number  [boolean]
+			Global Flags:
+			  -j, --experimental-json-config  ⚑Experimental: support wrangler.json  [boolean]
+			  -c, --config                    ⚑Path to .toml configuration file  [string]
+			  -e, --env                       ⚑Environment to use for operations and .env files  [string]
+			  -h, --help                      ⚑Show help  [boolean]
+			  -v, --version                   ⚑Show version number  [boolean]
 
 			Options:
 			  -J, --jurisdiction  The jurisdiction where the bucket exists  [string]"
@@ -240,12 +240,12 @@ describe("r2", () => {
 			Positionals:
 			  name  The name of the bucket to delete  [string] [required]
 
-			Flags:
-			  -j, --experimental-json-config  Experimental: Support wrangler.json  [boolean]
-			  -c, --config                    Path to .toml configuration file  [string]
-			  -e, --env                       Environment to use for operations and .env files  [string]
-			  -h, --help                      Show help  [boolean]
-			  -v, --version                   Show version number  [boolean]
+			Global Flags:
+			  -j, --experimental-json-config  ⚑Experimental: support wrangler.json  [boolean]
+			  -c, --config                    ⚑Path to .toml configuration file  [string]
+			  -e, --env                       ⚑Environment to use for operations and .env files  [string]
+			  -h, --help                      ⚑Show help  [boolean]
+			  -v, --version                   ⚑Show version number  [boolean]
 
 			Options:
 			  -J, --jurisdiction  The jurisdiction where the bucket exists  [string]"

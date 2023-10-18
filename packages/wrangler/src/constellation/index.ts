@@ -64,12 +64,16 @@ export function constellation(yargs: CommonYargsArgv) {
 				);
 			}
 		)
-		.command("runtime", "🔹Check the suported runtimes", (constRuntimeYargs) => {
-			return constRuntimeYargs.command(
-				"list",
-				"🔹List suported runtimes",
-				ListRuntime.options,
-				ListRuntime.handler
-			);
-		});
+		.command(
+			"runtime",
+			"🔹Check the suported runtimes",
+			(constRuntimeYargs) => {
+				return constRuntimeYargs.command(
+					"list",
+					"🔹List suported runtimes",
+					ListRuntime.options,
+					ListRuntime.handler
+				);
+			}
+		);
 }

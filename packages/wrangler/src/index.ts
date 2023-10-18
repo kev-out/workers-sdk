@@ -194,12 +194,10 @@ export function demandOneOfOption(...options: string[]) {
 export class CommandLineArgsError extends Error {}
 
 const highlight = (text: string, colorHex: string) => {
-  const highlightText = supportsColor.stdout
-  ? chalk.hex(colorHex)(text)
-  : text;
+	const highlightText = supportsColor.stdout ? chalk.hex(colorHex)(text) : text;
 
-  return highlightText;
-}
+	return highlightText;
+};
 
 export function createCLIParser(argv: string[]) {
 	// Type check result against CommonYargsOptions to make sure we've included
@@ -253,7 +251,12 @@ export function createCLIParser(argv: string[]) {
 			}
 			return true;
 		})
-    .epilogue(`Please report any issues to ${highlight("https://github.com/cloudflare/workers-sdk/issues/new/choose", "#3B818D")}`);
+		.epilogue(
+			`Please report any issues to ${highlight(
+				"https://github.com/cloudflare/workers-sdk/issues/new/choose",
+				"#3B818D"
+			)}`
+		);
 
 	wrangler.group(
 		["experimental-json-config", "config", "env", "help", "version"],
@@ -317,7 +320,7 @@ export function createCLIParser(argv: string[]) {
 		initHandler
 	);
 
-  // dev
+	// dev
 	wrangler.command(
 		"dev [script]",
 		"🔸Start a local server for developing a worker",
@@ -325,7 +328,7 @@ export function createCLIParser(argv: string[]) {
 		devHandler
 	);
 
-  // deploy
+	// deploy
 	wrangler.command(
 		["deploy [script]", "publish [script]"],
 		"🔸Deploy a Worker to Cloudflare",
@@ -333,54 +336,54 @@ export function createCLIParser(argv: string[]) {
 		deployHandler
 	);
 
-  //deployments
+	//deployments
 	const deploymentsWarning =
-    "🚧`wrangler deployments` is a beta command. Please report any issues to https://github.com/cloudflare/workers-sdk/issues/new/choose";
-  wrangler.command(
-    "deployments",
-    "🔸List and view details for deployments for a Worker",
-    (yargs) =>
-      yargs
-        .option("name", {
-          describe: "The name of your worker",
-          type: "string",
-        })
-        .command(
-          "list",
-          "🔸Displays the 10 most recent deployments for a worker",
-          async (listYargs) => listYargs,
-          async (listYargs) => {
-            const { accountId, scriptName, config } =
-              await commonDeploymentCMDSetup(listYargs, deploymentsWarning);
-            await deployments(accountId, scriptName, config);
-          }
-        )
-        .command(
-          "view [deployment-id]",
-          "🔸View a deployment",
-          async (viewYargs) =>
-            viewYargs.positional("deployment-id", {
-              describe: "The ID of the deployment you want to inspect",
-              type: "string",
-              demandOption: false,
-            }),
-          async (viewYargs) => {
-            const { accountId, scriptName, config } =
-              await commonDeploymentCMDSetup(viewYargs, deploymentsWarning);
+		"🚧`wrangler deployments` is a beta command. Please report any issues to https://github.com/cloudflare/workers-sdk/issues/new/choose";
+	wrangler.command(
+		"deployments",
+		"🔸List and view details for deployments for a Worker",
+		(yargs) =>
+			yargs
+				.option("name", {
+					describe: "The name of your worker",
+					type: "string",
+				})
+				.command(
+					"list",
+					"🔸Displays the 10 most recent deployments for a worker",
+					async (listYargs) => listYargs,
+					async (listYargs) => {
+						const { accountId, scriptName, config } =
+							await commonDeploymentCMDSetup(listYargs, deploymentsWarning);
+						await deployments(accountId, scriptName, config);
+					}
+				)
+				.command(
+					"view [deployment-id]",
+					"🔸View a deployment",
+					async (viewYargs) =>
+						viewYargs.positional("deployment-id", {
+							describe: "The ID of the deployment you want to inspect",
+							type: "string",
+							demandOption: false,
+						}),
+					async (viewYargs) => {
+						const { accountId, scriptName, config } =
+							await commonDeploymentCMDSetup(viewYargs, deploymentsWarning);
 
-            await viewDeployment(
-              accountId,
-              scriptName,
-              config,
-              viewYargs.deploymentId
-            );
-          }
-        )
-        .command(subHelp)
-        .epilogue(deploymentsWarning)
-  );
+						await viewDeployment(
+							accountId,
+							scriptName,
+							config,
+							viewYargs.deploymentId
+						);
+					}
+				)
+				.command(subHelp)
+				.epilogue(deploymentsWarning)
+	);
 
-  const rollbackWarning =
+	const rollbackWarning =
 		"🚧`wrangler rollback` is a beta command. Please report any issues to https://github.com/cloudflare/workers-sdk/issues/new/choose";
 	wrangler.command(
 		"rollback [deployment-id]",
@@ -416,7 +419,7 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // delete
+	// delete
 	wrangler.command(
 		"delete [script]",
 		"🔸Delete a Worker from Cloudflare",
@@ -424,7 +427,7 @@ export function createCLIParser(argv: string[]) {
 		deleteHandler
 	);
 
-  // tail
+	// tail
 	wrangler.command(
 		"tail [worker]",
 		"🔸Start a log tailing session for a Worker",
@@ -432,7 +435,7 @@ export function createCLIParser(argv: string[]) {
 		tailHandler
 	);
 
-  // secret
+	// secret
 	wrangler.command(
 		"secret",
 		"🔸Generate a secret that can be referenced in a Worker",
@@ -441,14 +444,14 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  wrangler.command(
+	wrangler.command(
 		"secret:bulk [json]",
 		"🔸Bulk upload secrets for a Worker",
 		secretBulkOptions,
 		secretBulkHandler
 	);
 
-  // type generation
+	// type generation
 	wrangler.command(
 		"types",
 		"🔸Generate types from bindings & module rules in config",
@@ -482,7 +485,7 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // kv namespace
+	// kv namespace
 	wrangler.command(
 		"kv:namespace",
 		"🔹Manage Workers KV namespaces",
@@ -509,12 +512,9 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // queues
-	wrangler.command(
-    "queues",
-    "🔹Manage Workers Queues",
-    (queuesYargs) => {
-		  return queues(queuesYargs.command(subHelp));
+	// queues
+	wrangler.command("queues", "🔹Manage Workers Queues", (queuesYargs) => {
+		return queues(queuesYargs.command(subHelp));
 	});
 
 	// hyperdrive
@@ -531,12 +531,9 @@ export function createCLIParser(argv: string[]) {
 		return ai(aiYargs.command(subHelp));
 	});
 
-  // d1
-	wrangler.command(
-    "d1",
-    "🔹Manage Workers D1 databases",
-    (d1Yargs) => {
-		  return d1(d1Yargs.command(subHelp));
+	// d1
+	wrangler.command("d1", "🔹Manage Workers D1 databases", (d1Yargs) => {
+		return d1(d1Yargs.command(subHelp));
 	});
 
 	// vectorize
@@ -548,15 +545,12 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // r2
-	wrangler.command(
-    "r2",
-    "🔹Manage R2 buckets & objects",
-    (r2Yargs) => {
-		  return r2(r2Yargs.command(subHelp));
+	// r2
+	wrangler.command("r2", "🔹Manage R2 buckets & objects", (r2Yargs) => {
+		return r2(r2Yargs.command(subHelp));
 	});
 
-  // mtls-certificate
+	// mtls-certificate
 	wrangler.command(
 		"mtls-certificate",
 		"🔹Manage certificates used for mTLS connections",
@@ -565,7 +559,7 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // pubsub
+	// pubsub
 	wrangler.command(
 		"pubsub",
 		`🔹Manage Pub/Sub brokers ${highlight("private beta", "#FF8800")}`,
@@ -574,15 +568,16 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // pages
+	// pages
 	wrangler.command(
-    "pages",
-    "🔹Configure Cloudflare Pages applications",
-    (pagesYargs) => {
-		  return pages(pagesYargs.command(subHelp));
-	});
+		"pages",
+		"🔹Configure Cloudflare Pages applications",
+		(pagesYargs) => {
+			return pages(pagesYargs.command(subHelp));
+		}
+	);
 
-  // dispatch-namespace
+	// dispatch-namespace
 	wrangler.command(
 		"dispatch-namespace",
 		"🔹Manage dispatch namespaces",
@@ -591,7 +586,7 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  // ai
+	// ai
 	wrangler.command(
 		"constellation",
 		"🔹Manage Constellation models",
@@ -600,7 +595,7 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-  /**
+	/**
 	 * User Group: login, logout, and whoami
 	 * TODO: group commands into User group similar to .group() for flags in yargs
 	 */
@@ -693,13 +688,12 @@ export function createCLIParser(argv: string[]) {
 		}
 	);
 
-
-  // LIZ HERE
+	// LIZ HERE
 
 	// [DEPRECATED] generate
 	wrangler.command(
 		"generate [name] [template]",
-    false,
+		false,
 		// "✨ Generate a new Worker project from an existing Worker template. See https://github.com/cloudflare/templates",
 		generateOptions,
 		generateHandler

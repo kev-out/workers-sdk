@@ -520,14 +520,14 @@ export function createCLIParser(argv: string[]) {
 	// hyperdrive
 	wrangler.command(
 		"hyperdrive",
-		"🚀 Configure Hyperdrive databases",
+		"🔹Configure Hyperdrive databases",
 		(hyperdriveYargs) => {
 			return hyperdrive(hyperdriveYargs.command(subHelp));
 		}
 	);
 
 	// ai
-	wrangler.command("ai", "🤖 Interact with AI models", (aiYargs) => {
+	wrangler.command("ai", "🔹Manage AI models", (aiYargs) => {
 		return ai(aiYargs.command(subHelp));
 	});
 
@@ -542,7 +542,7 @@ export function createCLIParser(argv: string[]) {
 	// vectorize
 	wrangler.command(
 		"vectorize",
-		"🧮 Interact with Vectorize indexes",
+		`🔹Manage Vectorize indexes ${highlight("open beta", "#FF8800")}`,
 		(vectorYargs) => {
 			return vectorize(vectorYargs.command(subHelp));
 		}

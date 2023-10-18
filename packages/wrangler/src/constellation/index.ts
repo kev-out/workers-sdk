@@ -10,64 +10,64 @@ import type { CommonYargsArgv } from "../yargs-types";
 
 export function constellation(yargs: CommonYargsArgv) {
 	return yargs
-		.command("project", "Manage your projects", (constProjYargs) => {
+		.command("project", "🔹Manage your projects", (constProjYargs) => {
 			return constProjYargs
 				.command(
 					"list",
-					"List your projects",
+					"🔹List your projects",
 					ListProject.options,
 					ListProject.handler
 				)
 				.command(
 					"create <name> <runtime>",
-					"Create project",
+					"🔹Create project",
 					CreateProject.options,
 					CreateProject.handler
 				)
 				.command(
 					"delete <name>",
-					"Delete project",
+					"🔹Delete project",
 					DeleteProject.options,
 					DeleteProject.handler
 				);
 		})
-		.command("model", "Manage your models", (constModelYargs) => {
+		.command("model", "🔹Manage your models", (constModelYargs) => {
 			return constModelYargs
 				.command(
 					"upload <projectName> <modelName> <modelFile>",
-					"Upload a model for an existing project",
+					"🔹Upload a model for an existing project",
 					UploadModel.options,
 					UploadModel.handler
 				)
 				.command(
 					"list <projectName>",
-					"List models of a project",
+					"🔹List models of a project",
 					ListModel.options,
 					ListModel.handler
 				)
 				.command(
 					"delete <projectName> <modelName>",
-					"Delete a model of a project",
+					"🔹Delete a model of a project",
 					DeleteProjectModel.options,
 					DeleteProjectModel.handler
 				);
 		})
 		.command(
 			"catalog",
-			"Check the curated model catalog",
+			"🔹Check the curated model catalog",
 			(constCatalogYargs) => {
 				return constCatalogYargs.command(
 					"list",
-					"List catalog models",
+					"🔹List catalog models",
 					ListCatalog.options,
 					ListCatalog.handler
 				);
 			}
 		)
-		.command("runtime", "Check the suported runtimes", (constRuntimeYargs) => {
+		.command("runtime", "🔹Check the suported runtimes", (constRuntimeYargs) => {
 			return constRuntimeYargs.command(
 				"list",
-				"List suported runtimes",
+				"🔹List suported runtimes",
 				ListRuntime.options,
 				ListRuntime.handler
 			);

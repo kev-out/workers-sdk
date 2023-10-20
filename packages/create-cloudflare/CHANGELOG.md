@@ -1,5 +1,15 @@
 # create-cloudflare
 
+## 2.6.2
+
+### Patch Changes
+
+- [#4243](https://github.com/cloudflare/workers-sdk/pull/4243) [`bfb66aa0`](https://github.com/cloudflare/workers-sdk/commit/bfb66aa06c4075bb3f12ba702a555f51653a5199) Thanks [@dependabot](https://github.com/apps/dependabot)! - C3: Bumped `create-vue` from `3.7.5` to `3.8.0`
+
+* [#4244](https://github.com/cloudflare/workers-sdk/pull/4244) [`5c81d34d`](https://github.com/cloudflare/workers-sdk/commit/5c81d34d01454e129ca6587b6b99d6ea4ec9c870) Thanks [@dependabot](https://github.com/apps/dependabot)! - C3: Bumped `create-qwik` from `1.2.13` to `1.2.14`
+
+- [#4246](https://github.com/cloudflare/workers-sdk/pull/4246) [`67c4c2c0`](https://github.com/cloudflare/workers-sdk/commit/67c4c2c0f581047fece5401d5ccfff5f2476412e) Thanks [@dependabot](https://github.com/apps/dependabot)! - C3: Bumped `gatsby` from `5.12.7` to `5.12.8`
+
 ## 2.6.1
 
 ### Patch Changes
